@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;600&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  overflow: hidden;
+  font-family: 'Rubik', sans-serif;
+}
+.loader{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #16141c;
+  transition: all .5s ease-in-out;
+  z-index: 900;
+}
+.hide{
+  border-radius: 50%;
+  transform: scale(0);
+}
+.container-background{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: 250;
+}
+.background{
+  width: 100%;
+  height: 100%;
+}
+.first{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000080;
+  padding: 7rem 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  z-index: 500;
+  color: #ffffff;
+}
+.one{
+  grid-column: 1 / 2;
+}
+.two{
+  grid-column: 1 / 2;
+  color: #fff;
+  margin-left: 200px;
+}
+.two>img{
+  width: 100px;
+}
+.three{
+  text-align: right;
+  position: absolute;
+  right: 10rem;
+  bottom: 3rem;
+}
+.temperature{
+  font-size: 150px;
+  font-weight: bold;
+}
+.changeUnd{
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 1rem;
+  color: #ffffff;
+  font-weight: bold;
+  border: .5px solid #ffffff40;
+  background: transparent;
+  transition: all .5s linear;
+}
+.changeUnd:hover{
+  background: #ffffff40;
+}
+.second{
+  position: absolute;
+  top: 2rem;
+  right: 6rem;
+  padding: 1rem 5rem;
+  color: #ffffff;
+  font-size: 25px;
+  z-index: 510;
+}
+.second>p{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 5px;
+  border: .2px solid #ffffff40;
+  border-radius: 1rem;
+  background-color: #00000080;
+  padding: 5px;
+}
+.icon-temp{
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  background-color: #ffffff20;
+  border-radius: 50%;
+}
+.audio{
+  width: 100px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
