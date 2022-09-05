@@ -114,3 +114,36 @@ body{
   right: 1rem;
   z-index: 1000;
 }
+
+@media screen and (max-width: 376px) {
+  .first{
+    display: inline-block;
+    grid-template-columns: 1fr;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+  }
+  .temperature{
+    font-size: 60px;
+    font-weight: bold;
+  }
+  .one{
+    width: 50%;
+    font-size: 15px;
+    text-align: right;
+    position: absolute;
+    right: 1rem;
+  }
+  .two{
+    text-align: right;
+    position: absolute;
+    right: 1rem;
+    top: 15rem;
+  }
+  .three{
+    text-align: right;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
