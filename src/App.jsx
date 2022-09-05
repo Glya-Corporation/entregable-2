@@ -38,12 +38,34 @@ function App() {
 
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(success);
+    navigator.geolocation.getCurrentPosition(success, error);
     function success(pos) {
       const crd = pos.coords;
 
+      
+
       axios
         .get(`https://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&appid=030220ef8255931561ca49d74da57673`)
+        .then(res => {
+          setWeather(res.data)
+          setTemperature(parseInt(res.data.main?.temp - 273.15))
+          setCentigrade(parseInt(res.data.main?.temp - 273.15))
+          // K − 273.15 =  °C --> de kelvin a centigrados
+
+          setFahrenheit((parseInt(res.data.main?.temp - 273.15) * 9 / 5) + 32)
+          // ((K − 273.15) × 9/5) + 32 = 32 °F --> de centigrados a fahrenheit
+
+          setBackground(climate[`${res.data.weather?.[0].icon}`])
+          setSounds(climateSound[`${res.data.weather?.[0].icon}`])
+        }
+
+        )
+    }
+
+    function error(err) {
+      alert('For a more accurate result, please activate your location')
+      axios
+        .get(`https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=030220ef8255931561ca49d74da57673`)
         .then(res => {
           setWeather(res.data)
           setTemperature(parseInt(res.data.main?.temp - 273.15))
